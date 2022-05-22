@@ -1,0 +1,197 @@
+:root {
+  --softblue: rgb(139,172,218);
+  --cyan: rgb(0,255,247);
+  --mainbg: rgb(13,25,43);
+  --cardbg: rgb(20,37,61);
+  --line: rgb(20,37,61);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--mainbg);
+  color: var(--softblue);
+  font-family: outfit, sans-serif;
+  min-width: 350px;
+  overflow: auto;
+  font-weight: 300;
+}
+
+main {
+  width: 90%;
+  /* margin: 20% auto 0; */
+  background: var(--cardbg);
+  padding: 1.5em;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-hover {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  border-radius: 12px;
+  width: 100%;
+  display: block;
+  backface-visibility: hidden;
+}
+
+.view-icon {
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: var(--cyan);
+  transition: opacity .8s ease;
+}
+
+/* .view-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.img-hover:hover .view-icon, .icon-img {
+  opacity: .3;
+  cursor: pointer;
+}
+
+.icon-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.img-hover:hover .icon-img {
+  opacity: .8;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin: 1.2em 0 .6em;
+  color: rgb(255,255,255);
+  transition: color .3s ease;
+}
+
+h1:hover {
+  color: var(--cyan);
+  cursor: pointer;
+}
+
+.main>p:nth-of-type(1) {
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 4em; */
+}
+
+.eth-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-self: flex-start;
+  gap: .4em;
+  margin: 1em 0;
+}
+
+.eth-wrapper>p {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.days-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: .4em;
+  justify-self: flex-end;
+}
+
+hr {
+  color: var(--line);
+}
+
+.profile-wrapper {
+  display: flex;
+  margin-top: 1em;
+  gap: 1em;
+  align-items: center;
+}
+
+.profile-wrapper>img {
+  width: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+  font-size: inherit;
+  font-weight: inherit;
+  transition: color .3s ease;
+}
+
+.profile-link:hover {
+  color: var(--cyan);
+}
+
+@media screen and (min-width: 90em) {
+    body {
+        padding: 0;
+        margin: 0;
+      }
+    
+      .main {
+        max-width: 22%;
+        position: absolute;
+        top: 50%;
+        left: 40vw;
+        transform: translateY(-50%);
+        margin: 0;
+      }
+}
+@media screen and (min-width: 50em) and (max-width: 89em) {
+    body {
+        padding: 0;
+        margin: 0;
+      }
+    
+      .main {
+        max-width: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50vw;
+        transform: translate(-50%,-50%);
+        margin: 0;
+      }
+}
